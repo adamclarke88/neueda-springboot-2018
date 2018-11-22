@@ -14,7 +14,7 @@
 
 <body>
 
-	<nav th:replace="layouts/nav :: navFragment">
+	<nav th:replace="layouts/navbar :: navFragment">
 	
 	</nav>
 			
@@ -24,22 +24,57 @@
 			</div>
 			
 			<div class="container">
-							<table class="table table-striped">
-					<thead>
-						<th>Name</th>
-						<th>Author</th>
-						<th>Image</th>
-					</thead>
+<!-- 							<table class="table table-striped"> -->
+<!-- 					<thead> -->
+<!-- 						<th>Name</th> -->
+<!-- 						<th>Author</th> -->
+<!-- 						<th>Image</th> -->
+<!-- 					</thead> -->
 					
-					<tbody>
-						<tr th:each="dwarf: ${tolkienDwarfs}">
-							<td th:text="${dwarf.name}">Happy</td>
-							<td th:text="${dwarf.author}">Disney</td>
-							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
-						</tr>
-					</tbody>
+<!-- 					<tbody> -->
+<!-- 						<tr th:each="character: ${toyStoryCharacters}"> -->
+<!-- 							<td th:text="${character.name}"></td> -->
+<!-- 							<td th:text="${character.movie}"></td> -->
+<!-- 							<td><img src="../static/images/woody.jpeg" th:src="@{/images/}+${character.image}"></img></td> -->
+<!-- 						</tr> -->
+<!-- 					</tbody> -->
 					
-				</table>
+					
+					
+<!-- 				</table> -->
+				
+				
+				<br>
+				
+				<div class="row" >
+				<div class="col-sm-4" th:each="character: ${toyStoryCharacters}">
+					<div class="card" >
+					<img class="card-img-top"  th:src="@{/images/}+${character.image}" alt="Card image" style="width:100%">
+					<div class="card-body">
+					  <h4 class="card-title" th:text="${character.name}">Lamb Rogan Josh</h4>
+						<p class="card-text">Ingredients</p>
+						<p class="card-text">75 g (2¾ oz) natural yoghurt<br>
+							½-1 teaspoon cayenne pepper<br>
+							2 teaspoons ground coriander<br>
+							1½ teaspoons ground cumin<br>
+							2 teaspoons garlic purée<br>
+							2 teaspoons ginger purée<br>
+							1 teaspoon paprika </p>
+						<a href="#method1" class="btn btn-primary" data-toggle="collapse">More Info</a><br>
+  							<div id="method1" class="collapse">
+    							<br><p>1. To make the paste, in a mixer, blend together the coriander stalks, red chilli, ground spices and salt. Mix in the tomato purée.</p>
+
+											<p>2. To cook the lamb, heat the oil in a large heavy-based casserole. Fry the cinnamon stick, cardamom pods, bay leaves and cloves for 2 minutes. Add the onion and lamb and fry for 4-5 minutes, stirring. Add the garlic and ginger and fry for 2 minutes.</p>
+
+											<p>3. Add the spice paste and fry for another 2 minutes, stirring</p>
+
+											<p>4. Add 400ml/14fl oz water, then cover with a lid and simmer for 40-50 minutes, until cooked. Stir in the yoghurt and cook for 10 minutes. Serve garnished with the fresh coriander leaves.</p>
+  							</div>
+					</div>
+		  			</div>
+		  			<br>
+				</div>
+				
 		
 			</div>
 			

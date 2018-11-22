@@ -12,22 +12,22 @@ public class CharacterService {
 		
 		ArrayList<Character> characters = new ArrayList<Character>();
 		
-		Character woody = new Character("Woody", "Toy Story", "woody.jpg");
+		Character woody = new Character("Woody", "Toy Story", "woody.jpeg");
 		characters.add(woody);
 		
-		Character buzzLightyear = new Character("Buzz Lightyear", "Toy Story", "buzz-lightyear.jpg");
+		Character buzzLightyear = new Character("Buzz Lightyear", "Toy Story", "buzz-lightyear.jpeg");
 		characters.add(buzzLightyear);
 		
-		Character mrPotatoHead = new Character("Mr. Potato Head", "Toy Story", "mr-potato-head.jpg");
+		Character mrPotatoHead = new Character("Mr. Potato Head", "Toy Story", "mr-potato-head.jpeg");
 		characters.add(mrPotatoHead);
 		
-		Character slinky = new Character("Slinky", "Toy Story", "slinky.jpg");
+		Character slinky = new Character("Slinky", "Toy Story", "slinky.jpeg");
 		characters.add(slinky);
 		
-		Character rex = new Character("Rex", "Toy Story", "rex.jpg");
+		Character rex = new Character("Rex", "Toy Story", "rex.jpeg");
 		characters.add(rex);
 		
-		Character hamm = new Character("Hamm", "Toy Story", "hamm.jpg");
+		Character hamm = new Character("Hamm", "Toy Story", "hamm.jpeg");
 		characters.add(hamm);
 		
 		return characters;
