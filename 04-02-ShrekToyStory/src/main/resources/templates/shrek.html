@@ -35,8 +35,8 @@
 					
 					<tbody>
 						<tr th:each="dwarf: ${disneyDwarfs}">
-							<td th:text="${dwarf.name}">Happy</td>
-							<td th:text="${dwarf.author}">Disney</td>
+							<td th:text="${dwarf.name}"></td>
+							<td th:text="${dwarf.author}"></td>
 							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
 						</tr>
 					</tbody>
