@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:replace="layouts/head :: headFragment"></head>
+
+<body>
+
+	<nav th:replace="layouts/navbar :: navFragment"></nav>
+			
+			<div class="jumbotron">
+  				<h1 style="text-align: center;">World's Largest Buildings</h1> 
+  				<p style="text-align: center;"><a href="">Volume</a> <span style="font-weight: bold;">||</span><a href="/disney"> Footprint</a> <span style="font-weight: bold;">||</span> <a href="/"> Floor Area</a>
+			</div>
+			
+				<br>
+				
+				<p>test</p>
+				
+		<div class="row" >
+				<div class="col-sm-4" th:each="building: ${buildingVolumeArray}">
+					<div class="card" >
+					<img class="card-img-top"  th:src="@{/images/}+${building.image}" alt="Card image" style="width:100%">
+					<div class="card-body">
+					  <h4 class="card-title" th:text="${building.name}"></h4>
+						<p class="card-text"></p>
+						<p class="card-text" th:text="${building.description}">
+						</p>
+						<a href="#method1" class="btn btn-primary" data-toggle="collapse">More Info</a><br>
+  							<div id="method1" class="collapse">
+    							<br><p></p>
+  							</div>
+					</div>
+		  			</div>
+		  			<br>
+				</div>
+				
+		
+			</div>
+			</div>
+			
+
+	<nav th:replace="layouts/footer :: footerFragment"></nav>	
+	<div th:replace="layouts/scripts :: scriptsFragment"></div>
+</body>
+
+</html>
