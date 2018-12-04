@@ -34,6 +34,15 @@
 					</thead>
 					
 					<tbody>
+						<tr th:each="dwarf: ${dwarf}">
+							<td th:text="${dwarf.name}">Happy</td>
+							<td th:text="${dwarf.author}">Disney</td>
+							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
+						</tr>
+					</tbody>
+					
+					
+					<tbody>
 						<tr th:each="dwarf: ${disneyDwarfs}">
 							<td th:text="${dwarf.name}">Happy</td>
 							<td th:text="${dwarf.author}">Disney</td>

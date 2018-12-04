@@ -26,6 +26,55 @@
 			<div class="container">
 			
 				<img class="silhouette" src="images/dwarf-images/silhouette-main.png">
+				</br>
+				
+				<form action="/searchid" method="get">
+						<label>ID</label>
+						<input type="text" name="id" placeholder="Enter a Dwarf ID to search"/>
+						<button type="submit">Search</button>
+				</form>
+				
+				<form action="/searchAuthor" method="get">
+					
+						<label>Author</label>
+						<input type="text" name="author" placeholder="Enter a Dwarf author to search"/>
+						<button type="submit">Search</button>
+					
+				</form>
+				
+					<table class="table table-striped" >
+					<thead>
+						<th>Name</th>
+						<th>Author</th>
+						<th>Image</th>
+					</thead>
+					
+					<tbody>
+						<tr th:each="dwarf: ${dwarf}">
+							<td th:text="${dwarf.name}">Happy</td>
+							<td th:text="${dwarf.author}">Disney</td>
+							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
+						</tr>
+					</tbody>
+					
+					
+					<tbody>
+						<tr th:each="dwarf: ${dwarfAuthor}">
+							<td th:text="${dwarf.name}">Happy</td>
+							<td th:text="${dwarf.author}">Disney</td>
+							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
+						</tr>
+					</tbody>
+					
+				</table>
+				
+					<tbody>
+						<tr th:each="dwarf: ${disneyDwarfs}">
+							<td th:text="${dwarf.name}">Happy</td>
+							<td th:text="${dwarf.author}">Disney</td>
+							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
+						</tr>
+					</tbody>
 							
 			</div>
 			

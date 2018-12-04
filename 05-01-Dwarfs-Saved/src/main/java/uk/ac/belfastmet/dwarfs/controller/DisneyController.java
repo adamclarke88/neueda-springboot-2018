@@ -6,10 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import uk.ac.belfastmet.dwarfs.domain.Dwarf;
 import uk.ac.belfastmet.dwarfs.repository.DwarfRepository;
-import uk.ac.belfastmet.dwarfs.service.DwarfService;
 
 @Controller
 @RequestMapping("/disney")
@@ -25,23 +22,16 @@ public class DisneyController {
 
 
 	@GetMapping("")
-	public String home(Model model) {  //pageTitle is the key, "disney dwarfs" is the value
-									  //this is linked to the title attribute on the disney hmtl page
-		
-		
+	public String disneyHome(Model model) {  //pageTitle is the key, "disney dwarfs" is the value
+									 
 		//DwarfService dwarfService = new DwarfService();
 		//ArrayList<Dwarf> disneyDwarfs =  dwarfService.getDisneyDwarfs();
-		
-
 		//model.addAttribute("disneyDwarfs", disneyDwarfs);
-		
 		//model.addAttribute("disneyDwarfs", dwarfRepository.findAll());
-		model.addAttribute("disneyDwarfs", dwarfRepository.findByAuthor("Disney"));
+		
+		model.addAttribute("dwarfs", dwarfRepository.findByAuthor("Disney"));
 		model.addAttribute("pageTitle", "Disney Dwarfs!");
 		
 		return "dwarfs.html";							  
 	}
-	
-	
-
 }
