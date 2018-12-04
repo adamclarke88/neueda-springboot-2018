@@ -19,13 +19,21 @@ public class PassengerController {
 		this.passengerRepository = passengerRepository;
 	}
 	
+	@GetMapping("/passengers")
+	public String searchId(Model model) {
+
+		model.addAttribute("pageTitle", "Search!");
+		
+		return "passengers.html";
+	}
+	
 	@GetMapping("/showAllPassengers")
-	public String searchId(@RequestParam("id") Integer passengerId, Model model) {
+	public String showPassengers(@RequestParam("id") Integer passengerId, Model model) {
 
 		model.addAttribute("pageTitle", "Search!");
 		model.addAttribute("passenger", this.passengerRepository.findAll());
 		
-		return "index.html";
+		return "passengers.html";
 	}
 
 }
