@@ -19,38 +19,37 @@ public class PassengerController {
 		this.passengerRepository = passengerRepository;
 	}
 	
-	@GetMapping("/passengers")
+	@GetMapping("/passengerSearch")
 	public String searchId(Model model) {
-
 		model.addAttribute("pageTitle", "Search!");
-		
-		return "passengers.html";
+		return "passengerSearch.html";
 	}
 	
 	@GetMapping("/showAllPassengers")
 	public String showPassengers(@RequestParam("id") Integer passengerId, Model model) {
-
 		model.addAttribute("pageTitle", "Search!");
 		model.addAttribute("passenger", this.passengerRepository.findAll());
-		
 		return "passengers.html";
 	}
 	
 	@GetMapping("/passengerIdSearch")
 	public String searchById(@RequestParam("id") String  passengerId, Model model) {
-		
 		model.addAttribute("pageTitle", "ID Search!");
 		model.addAttribute("passenger", this.passengerRepository.findByPassengerId(passengerId));
-		
-		return "passengers.html";
+		return "passengerSearch.html";
 	}
 	
 	@GetMapping("/passengerNameSearch")
 	public String searchByName(@RequestParam("name") String name, Model model) {
-		
 		model.addAttribute("pageTitle", "Name Search!");
 		model.addAttribute("passenger", this.passengerRepository.findByNameContaining(name));
-		
-		return "passengers.html";
+		return "passengerSearch.html";
+	}
+	
+	@GetMapping("/passengersFindAll")
+	public String allDwarfsTest(Model model) {  
+		model.addAttribute("passenger", this.passengerRepository.findAll());
+		model.addAttribute("pageTitle", "Disney Dwarfs!");
+		return "passengers.html";							  
 	}
 }
