@@ -8,7 +8,7 @@
 	  <meta http-equiv="x-ua-compatible" content="ie=edge">
 	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	  <link rel="stylesheet" href="styles/styles.css">
+	  <link rel="stylesheet" href="styles/dwarf-styles.css">
 	  <title th:text="${pageTitle}">Dwarf Home</title>
 </head>
 
@@ -31,6 +31,7 @@
 						<th>Name</th>
 						<th>Author</th>
 						<th>Image</th>
+						<th>Crud</th>
 					</thead>
 					
 					<tbody>
@@ -38,23 +39,16 @@
 							<td th:text="${dwarf.name}">Happy</td>
 							<td th:text="${dwarf.author}">Disney</td>
 							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
-						</tr>
-					</tbody>
-					
-					
-					<tbody>
-						<tr th:each="dwarf: ${disneyDwarfs}">
-							<td th:text="${dwarf.name}">Happy</td>
-							<td th:text="${dwarf.author}">Disney</td>
-							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
+							<td><a href="#" th:href="@{view/} + ${dwarf.dwarfId}">View</a></td>
 						</tr>
 					</tbody>
 					
 					<tbody>
-						<tr th:each="dwarf: ${tolkienDwarfs}">
+						<tr th:each="dwarf: ${dwarfs}">
 							<td th:text="${dwarf.name}">Happy</td>
 							<td th:text="${dwarf.author}">Disney</td>
 							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
+							<td><a href="#" th:href="@{view/} + ${dwarf.dwarfId}">View</a></td>
 						</tr>
 					</tbody>
 					

@@ -1,6 +1,5 @@
 package uk.ac.belfastmet.dwarfs.controller;
 
-import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

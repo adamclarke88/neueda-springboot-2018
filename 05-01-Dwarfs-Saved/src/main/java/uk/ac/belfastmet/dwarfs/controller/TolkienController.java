@@ -31,7 +31,7 @@ DwarfRepository dwarfRepository;
 	 
 		
 		model.addAttribute("pageTitle", "Tolkien Dwarfs!");
-		model.addAttribute("tolkienDwarfs", tolkienDwarfs);
+		model.addAttribute("dwarfs", tolkienDwarfs);
 		return "dwarfs.html";
 		
 	}

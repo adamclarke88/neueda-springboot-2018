@@ -19,6 +19,7 @@ body {
 
 a {
 	color: inherit;
+	text-decoration: none;
 }
 
 a:hover {
@@ -39,8 +40,6 @@ img {
 /* 	max-width: 50%; */
 	width: 90px;
 	height: 180px;
-	
-
 }
 
 
