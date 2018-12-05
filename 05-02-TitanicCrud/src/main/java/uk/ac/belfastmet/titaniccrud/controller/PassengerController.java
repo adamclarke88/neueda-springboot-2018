@@ -35,5 +35,22 @@ public class PassengerController {
 		
 		return "passengers.html";
 	}
-
+	
+	@GetMapping("/passengerIdSearch")
+	public String searchById(@RequestParam("id") String  passengerId, Model model) {
+		
+		model.addAttribute("pageTitle", "ID Search!");
+		model.addAttribute("passenger", this.passengerRepository.findByPassengerId(passengerId));
+		
+		return "passengers.html";
+	}
+	
+	@GetMapping("/passengerNameSearch")
+	public String searchByName(@RequestParam("name") String name, Model model) {
+		
+		model.addAttribute("pageTitle", "Name Search!");
+		model.addAttribute("passenger", this.passengerRepository.findByNameContaining(name));
+		
+		return "passengers.html";
+	}
 }
