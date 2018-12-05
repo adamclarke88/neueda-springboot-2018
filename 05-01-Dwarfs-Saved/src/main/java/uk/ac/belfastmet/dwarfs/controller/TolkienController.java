@@ -24,16 +24,17 @@ DwarfRepository dwarfRepository;
 	}
 	
 	@GetMapping("")
-	public String home(Model model) {
+	public String disneyHome(Model model) {  //pageTitle is the key, "disney dwarfs" is the value
+									 
+		//DwarfService dwarfService = new DwarfService();
+		//ArrayList<Dwarf> disneyDwarfs =  dwarfService.getDisneyDwarfs();
+		//model.addAttribute("disneyDwarfs", disneyDwarfs);
+		//model.addAttribute("disneyDwarfs", dwarfRepository.findAll());
 		
-		DwarfService dwarfService = new DwarfService();
-		ArrayList<Dwarf> tolkienDwarfs =  dwarfService.getTolkienDwarfs();
-	 
-		
+		model.addAttribute("dwarfs", dwarfRepository.findByAuthor("Tolkien"));
 		model.addAttribute("pageTitle", "Tolkien Dwarfs!");
-		model.addAttribute("dwarfs", tolkienDwarfs);
-		return "dwarfs.html";
 		
+		return "dwarfs.html";							  
 	}
 
 }

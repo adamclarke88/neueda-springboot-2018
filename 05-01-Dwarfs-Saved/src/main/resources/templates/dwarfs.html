@@ -25,6 +25,10 @@
 			</div>
 			
 			<div class="container">
+			
+			<div class="alert alert-success" role="alert" th:if="${message}">
+				<p th:text="${message}"></p>
+			</div>
 				
 				<table class="table table-striped">
 					<thead>
@@ -35,20 +39,13 @@
 					</thead>
 					
 					<tbody>
-						<tr th:each="dwarf: ${dwarf}">
-							<td th:text="${dwarf.name}">Happy</td>
-							<td th:text="${dwarf.author}">Disney</td>
-							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
-							<td><a href="#" th:href="@{view/} + ${dwarf.dwarfId}">View</a></td>
-						</tr>
-					</tbody>
-					
-					<tbody>
 						<tr th:each="dwarf: ${dwarfs}">
-							<td th:text="${dwarf.name}">Happy</td>
-							<td th:text="${dwarf.author}">Disney</td>
+							<td th:text="${dwarf.name}"></td>
+							<td th:text="${dwarf.author}"></td>
 							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
 							<td><a href="#" th:href="@{view/} + ${dwarf.dwarfId}">View</a></td>
+							<td><a href="#" th:href="@{delete/} + ${dwarf.dwarfId}">Delete</a></td>
+							
 						</tr>
 					</tbody>
 					

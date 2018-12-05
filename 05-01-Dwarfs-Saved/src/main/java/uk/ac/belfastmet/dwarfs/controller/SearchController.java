@@ -37,12 +37,12 @@ public class SearchController {
 		return "index.html";
 	}
 	
-	 @GetMapping("/searchbyauthorandname")
-	 public String searchNameAuthor(@RequestParam("name") String name, @RequestParam("author") String author, Model model) {
-	  model.addAttribute("pageTitle","Search!");
-	     model.addAttribute("dwarfs", this.dwarfRepository.findByNameAndAuthor(name,author));
-	  return "dwarf.html";
-	 }
+//	 @GetMapping("/searchbyauthorandname")
+//	 public String searchNameAuthor(@RequestParam("name") String name, @RequestParam("author") String author, Model model) {
+//	  model.addAttribute("pageTitle","Search!");
+//	     model.addAttribute("dwarfs", this.dwarfRepository.findByNameAndAuthor(name,author));
+//	  return "dwarf.html";
+//	 }
 	
 
 }
