@@ -8,7 +8,7 @@
 	<nav th:replace="layouts/navbar :: navFragment"></nav>
 			<div class="jumbotron">
   				<h1 style="text-align: center;">All Titanic Passengers</h1> 
-  				<p style="text-align: center;"><a href="">Passengers</a> <span style="font-weight: bold;">||</span><a href="/disney"> Searches</a> <span style="font-weight: bold;">||</span> <a href="/">CRUD</a>
+  				<p th:replace="layouts/subtitle :: subtitleFragment"></p>
 			</div>
 			
 			
@@ -47,7 +47,7 @@
 						<th>Fare</th>
 						<th>Cabin</th>
 						<th>Embarked</th>
-						<th>Action</th>
+						<th >Action</th>
 					</thead>
 					
 					<tbody>
@@ -65,6 +65,7 @@
 							<td th:text="${passenger.cabin=='' }? 'No Cabin' : ${passenger.cabin}"></td>
 							<td th:text="${passenger.embarked}"></td>
 							<td >View</td>
+							<td >Edit</td>
 							<td >Delete</td>
 <!-- 							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td> -->
 						</tr>

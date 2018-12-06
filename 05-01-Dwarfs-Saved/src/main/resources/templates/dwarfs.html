@@ -26,6 +26,8 @@
 			
 			<div class="container">
 			
+				<p><a href="#" th:href="@{/add/}">Add new dwarf</a> </p>
+			
 			<div class="alert alert-success" role="alert" th:if="${message}">
 				<p th:text="${message}"></p>
 			</div>
@@ -43,12 +45,13 @@
 							<td th:text="${dwarf.name}"></td>
 							<td th:text="${dwarf.author}"></td>
 							<td><img src="../static/images/dwarf-images/Happy.png" th:src="@{/images/dwarf-images/}+${dwarf.image}"></img></td>
-							<td><a href="#" th:href="@{view/} + ${dwarf.dwarfId}">View</a></td>
-							<td><a href="#" th:href="@{delete/} + ${dwarf.dwarfId}">Delete</a></td>
-							
+							<td>
+								<a href="#" th:href="@{view/} + ${dwarf.dwarfId}">View</a></br>
+								<a href="#" th:href="@{edit/} + ${dwarf.dwarfId}">Edit</a></br>
+								<a href="#" th:href="@{delete/} + ${dwarf.dwarfId}">Delete</a>
+							</td>
 						</tr>
 					</tbody>
-					
 				</table>
 				
 

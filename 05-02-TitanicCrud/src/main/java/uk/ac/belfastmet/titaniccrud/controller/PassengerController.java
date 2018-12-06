@@ -25,13 +25,6 @@ public class PassengerController {
 		return "passengerSearch.html";
 	}
 	
-	@GetMapping("/showAllPassengers")
-	public String showPassengers(@RequestParam("id") Integer passengerId, Model model) {
-		model.addAttribute("pageTitle", "Search!");
-		model.addAttribute("passenger", this.passengerRepository.findAll());
-		return "passengers.html";
-	}
-	
 	@GetMapping("/passengerIdSearch")
 	public String searchById(@RequestParam("id") String  passengerId, Model model) {
 		model.addAttribute("pageTitle", "ID Search!");
@@ -49,7 +42,14 @@ public class PassengerController {
 	@GetMapping("/passengersFindAll")
 	public String allDwarfsTest(Model model) {  
 		model.addAttribute("passenger", this.passengerRepository.findAll());
-		model.addAttribute("pageTitle", "Disney Dwarfs!");
+		model.addAttribute("pageTitle", "Find All Passengers");
 		return "passengers.html";							  
 	}
+	
+	@GetMapping("/crud")
+	public String crud(Model model) {  
+		model.addAttribute("pageTitle", "CRUD Operations");
+		return "crud.html";							  
+	}
+
 }
