@@ -24,10 +24,12 @@ public class Passenger {
 		super();
 	}
 
-	public Passenger(Integer passengerId, Integer survived, Integer pClass, String name, String sex, Integer age,
+	// remove passengerId from properties and constructor?
+	
+	public Passenger(Integer survived, Integer pClass, String name, String sex, Integer age,
 			Integer sibSp, Integer parch, String ticket, Double fare, String cabin, String embarked) {
 		super();
-		this.passengerId = passengerId;
+		//this.passengerId = passengerId;
 		this.survived = survived;
 		this.pClass = pClass;
 		this.name = name;

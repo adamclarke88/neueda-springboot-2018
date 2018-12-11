@@ -13,9 +13,9 @@
 
 <body>
 
-	<nav th:replace="layouts/nav :: navFragment">
+<!-- 	<nav th:replace="layouts/nav :: navFragment"> -->
 	
-	</nav>
+<!-- 	</nav> -->
 			
 
 			
@@ -38,7 +38,7 @@
 					</thead>
 					
 					<tbody>
-						<tr th:each="passenger: ${passenger}">
+						<tr th:each="passenger: ${passengers}">
 							<td th:text="${passenger.passengerId}">Result</td>
 							<td th:text="${passenger.survived==0}? 'They Died :(' : 'They Lived!'"></td> <!-- ternary operator; if first condition is true, do this, or else do that-->
 							<td th:text="${passenger.pClass==1}? 'First Class' : (${passenger.pClass==2}? 'Second Class' : 'Third Class' )"></td>
