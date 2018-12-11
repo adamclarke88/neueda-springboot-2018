@@ -22,52 +22,37 @@ public class PassengerServiceImpl implements PassengerService {
 	public PassengerServiceImpl(RestTemplate restTemplate) {
 		super();
 		this.restTemplate = restTemplate;
-		
 	}
 	
 	public ArrayList<Passenger> list(){
 		
 		String listPassengerUrl = this.apiUrl + "/passengers";
-		
 		AllPassengers allPassengers = this.restTemplate.getForObject(listPassengerUrl, AllPassengers.class);
-		
 		return allPassengers.getAllPassengers();
 	}
 	
 	public Passenger get(Integer passengerId)
+	
 	{
-		
 		String getPassengerUrl = this.apiUrl + "/passengers/" + passengerId;
 		Passenger passenger = this.restTemplate.getForObject(getPassengerUrl, Passenger.class);
 		return passenger;
-		
 	}
 	
 	public Passenger add(Passenger passenger) {
-		
 		String addPassengerUrl = this.apiUrl + "/passengers/" + passenger.getPassengerId();
-		
 		this.restTemplate.postForObject(addPassengerUrl, passenger, Passenger.class);
-		
 		return passenger;
-		
 	}
 	
 	public Passenger update(Passenger passenger) {
-		
 		String updatePassengerUrl = this.apiUrl + "/passengers/" + passenger.getPassengerId();
-		
 		this.restTemplate.put(updatePassengerUrl, passenger, Passenger.class);
-		
 		return passenger;
 	}
 	
 	public void delete(Integer passengerId) {
-		
 		String deletePassengerUrl = this.apiUrl + "/passengers/" + passengerId;
-		
-		this.restTemplate.delete(deletePassengerUrl);
-		
 	}
 	
 }
