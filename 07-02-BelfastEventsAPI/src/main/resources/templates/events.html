@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:replace="layouts/head :: headFragment"></head>
+
+<body>
+
+	<nav th:replace="layouts/navbar :: navFragment"></nav>
+	
+			<div class="jumbotron">
+<!--   				<h1 style="text-align: center;" th:text="${locationTitle}">Belfast Weather</h1>  -->
+			</div>
+			
+
+
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th>Identifier</th>
+						<th>URL</th>
+						<th>Start Date</th>
+						<th>End Date</th>
+						<th>Time</th>
+						<th>Venue</th>
+						<th>Venue Url</th>	
+						<th>Audience</th>
+						<th>Theme</th>
+						<th>Cost</th>
+						<th></th>
+
+						<th></th>
+
+					</tr>
+					</thead>
+					
+					<tbody>
+						<tr th:each="event: ${allEvents}">
+						<td th:text="${event.identifier}"></td>
+						<td th:text="${event.url}"></td>
+						<td th:text="${event.startDate}"></td>
+						<td th:text="${event.endDate}"></td>
+						<td th:text="${event.time}"></td>
+						<td th:text="${event.venue}"></td>
+						<td th:text="${event.venueUrl}"></td>
+						<td th:text="${event.image}"></td>
+						<td th:text="${event.audience}"></td>
+						<td th:text="${event.theme}"></td>
+						<td th:text="${event.cost}"></td>
+					</tr>
+					</tbody>
+				</table> </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+			
+<!-- 	<nav th:replace="layouts/footer :: footerFragment"></nav>	 -->
+	<div th:replace="layouts/scripts :: scriptsFragment"></div>
+</body>
+
+</html>
