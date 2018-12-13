@@ -1,0 +1,23 @@
+<table class="table table-striped">
+					<thead>
+						<th>Person Id</th>
+						<th>Affiliation Id</th>
+						<th>MemberName</th>
+						<th>Wind Speed </th>
+						<th>Direction</th>
+						<th>Image</th>
+					</thead> 
+					
+					<tr th:each="passenger: ${passengers}">
+					
+					<tbody>
+						<tr th:each="member: ${members}">
+							<td th:text="${member.personId}"></td>
+							<td th:text="${member.affiliationId}"></td>
+							<td th:text="${member.memberName}"></td>
+<!-- 							<td th:text="${todaysWeather.weather.wind.speed}"></td> -->
+<!-- 							<td th:text="${todaysWeather.weather.wind.direction}"></td> -->
+<!-- 							<td><img th:src="${todaysWeather.weather.image}"></td> -->
+						</tr>
+					</tbody>
+				</table> </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
