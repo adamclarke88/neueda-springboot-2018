@@ -31,7 +31,9 @@ public class MembersController {
 		AllMembersAPI allMembersAPI = restTemplate.getForObject(allMembersUrl, AllMembersAPI.class);		
 		
 
-		Map<String, AllMembersList>  allMembersList = allMembersAPI.getAllMembersList();
+		AllMembersList  allMembersList = allMembersAPI.getAllMembersList().get("Member").getAllMembers();
+		
+		ArrayList<Member> members = allMembersAPI.getAllMembersList().get("Member");
 		
 		
 		

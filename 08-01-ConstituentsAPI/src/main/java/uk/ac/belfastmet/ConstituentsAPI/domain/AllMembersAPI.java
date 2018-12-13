@@ -1,5 +1,6 @@
 package uk.ac.belfastmet.ConstituentsAPI.domain;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import lombok.Data;
@@ -9,7 +10,9 @@ public class AllMembersAPI {
 	
 	//private ArrayList<Member> allMembers;
 	
-	Map<String, Object> allMembersList;
+	//Map<String, Object> allMembersList;
+	
+	private AllMembersList membersList;
 	
 	public String toString() {
 		
