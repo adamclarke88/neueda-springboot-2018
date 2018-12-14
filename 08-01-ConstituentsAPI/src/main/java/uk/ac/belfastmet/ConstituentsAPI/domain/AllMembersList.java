@@ -1,7 +1,6 @@
 package uk.ac.belfastmet.ConstituentsAPI.domain;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,10 +10,13 @@ import lombok.Data;
 public class AllMembersList {
 	
 	@JsonProperty("Member")
-	ArrayList<Member> allMembersList;
-	
+	ArrayList<MLAs> members;
+
+	@Override
 	public String toString() {
-		return this.allMembersList.toString();
+		return "AllMembersList [members=" + this.members.toString() + "]";
 	}
+	
+	
 
 }
